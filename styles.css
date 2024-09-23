@@ -53,3 +53,12 @@ footer {
     background-color: #ff4d4d;
     color: white;
 }
+div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+}
+.audio-container {
+    text-align: center;
+}
