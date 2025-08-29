@@ -29,6 +29,24 @@
             <source src="music7.ogg" type="audio/ogg">
             Your browser does not support the audio element.
         </audio>
+         <script>
+    window.addEventListener("DOMContentLoaded", () => {
+      const player = document.getElementById("player");
+
+      // نحاول نشغل الصوت أول ما الصفحة تفتح
+      player.play().catch(() => {
+        // لو كروم منع التشغيل التلقائي
+        // هنستنى أول تفاعل من المستخدم (كليك أو زرار)
+        const start = () => {
+          player.play();
+          document.removeEventListener("click", start);
+          document.removeEventListener("keydown", start);
+        };
+        document.addEventListener("click", start);
+        document.addEventListener("keydown", start);
+      });
+    });
+  </script>
     </nav>
     </div>
     <section id="gallery">
